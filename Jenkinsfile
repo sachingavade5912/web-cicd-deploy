@@ -31,7 +31,7 @@ pipeline {
                 sh '''
                     docker stop my-web-app || true
                     docker rm my-web-app || true
-                    docker run -d --name my-web-app -p 80:80 ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/{ECR_REPOSITORY_NAME}:${IMAGE_TAG}
+                    docker run -d --name my-web-app -p 80:80 ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPOSITORY_NAME}:${IMAGE_TAG}
                 '''
             }
         }  
